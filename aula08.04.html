@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+    </body>
+    
+    <script>
+        
+        
+        
+        function dizOla(praquem, cb){
+            
+            if(typeof cb === 'function'){
+                return cb(praquem)
+            }
+            
+            return console.log('ola', praquem)
+        }
+        
+        function boaNoite(praquem){
+            console.log('boa noite', praquem);
+        }
+        
+         function boaTarde(praquem){
+            console.log('boa tarde', praquem);
+        }
+        
+        dizOla('maria')
+        dizOla('daniel', boaNoite)
+        dizOla('joão', boaTarde)
+        dizOla('ana', function(who){
+            console.log('bom dia', who)
+        })
+        
+        
+        
+    </script>
+</html>
