@@ -88,6 +88,13 @@
         
         function incluirDigito(digito){
             
+            if(clicadoEmIgual){
+                clicadoEmIgual =false;
+                n1 = digito;
+                mostrarNoDisplay(n1);
+                return
+            }
+            
             if(operacao !== null){
                 n2 = n2 + digito;
                 mostrarNoDisplay(n2);
@@ -109,6 +116,9 @@
             n1 = resultado;
             mostrarNoDisplay(n1);
             console.log('n1', n1, 'operacao', operacao, 'n2', n2)
+            
+            operacao = null;
+            n2 = ""
         }
         
         
@@ -148,10 +158,11 @@
         }
         
         function iniciarCalculo(simbolo){
-            if(clicadoEmIgual){
-                clicadoEmIgual = false;
-                n2 = '';
-            }
+//            if(clicadoEmIgual){
+//                clicadoEmIgual = false;
+//                n2 = '';
+//            }
+            clicadoEmIgual = false;
                     
             if(operacao === null || n2 === ''){
                 operacao = simbolo;
